@@ -1,0 +1,4 @@
+<template>
+   Courses Page
+</template>
+  
