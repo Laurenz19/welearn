@@ -59,6 +59,26 @@
 
   </div>
  </section>
+
+ <section class="courses">
+ <h2>Our Popular Courses</h2>
+  <div class="container courses__container">
+    <article
+      v-for="(course, index) in courses"
+      :key="index"
+      class="course"
+    >
+      <div class="course_image">
+        <img :src="course.photo">
+      </div>
+      <h3>{{course.title}}</h3>
+      <p>
+      {{course.description}}
+      </p>
+      <router-link to="/course" class="btn btn-primary">Learn More</router-link>
+    </article>
+  </div>
+ </section>
 </template>
 
 <script setup>
@@ -110,6 +130,27 @@
   },
  ])
 
+/**
+ * Courses
+ * Popular Course Handler
+ */
+ const courses = ref([
+  {
+    title: "Responsive Social Media Website UI Design",
+    description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, amet nulla minima nostrum iusto libero explicabo?",
+    photo:"src/assets/images/course1.jpg"
+ },
+ {
+    title: "Responsive Social Media Website UI Design",
+    description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, amet nulla minima nostrum iusto libero explicabo?",
+    photo:"src/assets/images/course2.jpg"
+ },
+ {
+    title: "Responsive Social Media Website UI Design",
+    description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, amet nulla minima nostrum iusto libero explicabo?",
+    photo:"src/assets/images/course3.jpg"
+ },
+])
 /**
  * Navbar Handler
  * useWindowScroll allows us to detect the 
