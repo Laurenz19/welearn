@@ -123,3 +123,8 @@ img{
     background-color: var(--color-danger);
     color: var(--color-white);
 }
+
+.swiper-pagination{
+    position: relative !important;
+    margin-top: 2rem;
+}

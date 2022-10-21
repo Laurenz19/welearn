@@ -10,6 +10,7 @@
     "@iconscout/unicons": "^4.0.1",
     "@vueuse/core": "^9.3.1",
     "pinia": "^2.0.21",
+    "swiper": "^8.4.4",
     "vue": "^3.2.38",
     "vue-router": "^4.1.5"
   },
