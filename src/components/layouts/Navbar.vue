@@ -3,7 +3,7 @@
     <div class="container nav__container">
       <router-link to="/"><h4>{{title}}</h4></router-link>
     
-      <ul class="nav__menu" v-show="showCloseBtn">
+      <ul class="nav__menu" v-show="showNavbar">
         <li
           v-for="(route, index) in routes"
           :key="index"
@@ -14,10 +14,10 @@
       </ul>
 
       <button
-        @click="showCloseBtn = !showCloseBtn"
+        @click="showNavbar = !showNavbar"
         id="openclose__menu"
       >
-        <i class="uil uil-bars" :class="showCloseBtn?'uil-multiply':'uil-bars'"></i>
+        <i class="uil uil-bars" :class="showNavbar?'uil-multiply':'uil-bars'"></i>
       </button>
     
     </div>
@@ -29,7 +29,7 @@
  * import 
  */
  import {ref, watch} from 'vue';
- import {useWindowScroll} from '@vueuse/core';
+ import {useWindowScroll, useWindowSize} from '@vueuse/core';
 
 /**
  * props
@@ -44,6 +44,7 @@
         default: ''
     }
  })
+
  
 
 /**
@@ -61,9 +62,20 @@
     navRef.value.classList.remove('nav__OnScroll')
   }
  })
+
+ const { width, height } = useWindowSize()
  
+ watch(width, ()=>{
+    console.log(width.value)
+    if(width.value<1024){
+        showNavbar.value = false
+    }else{
+        showNavbar.value = true
+    }
+ })
+
  /*used to switch between burger & close button in a small device*/
- const showCloseBtn = ref(false)
+ const showNavbar = ref(true)
 
 </script>
 
