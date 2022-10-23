@@ -7,9 +7,12 @@
         <li
           v-for="(route, index) in routes"
           :key="index"
-         
+          
         >
-            <router-link :to="route.path">{{route.name}}</router-link>
+           <router-link
+              :active-class="!isOnScroll?activeClass.color_1:activeClass.color_2"
+              :to="route.path"
+            >{{route.name}}</router-link>
         </li>
       </ul>
 
@@ -42,6 +45,10 @@
     title:{
         type: String,
         default: ''
+    },
+    activeClass:{
+        type: Object,
+        required: true
     }
  })
 
@@ -54,12 +61,14 @@
  */
  const {x, y} = useWindowScroll()
  const navRef = ref(null)
-
+ const isOnScroll = ref(false)
  watch(y, ()=>{
   if(y.value > 0){
     navRef.value.classList.add('nav__OnScroll')
+    isOnScroll.value = true
   }else if(y.value <= 1){
     navRef.value.classList.remove('nav__OnScroll')
+    isOnScroll.value = false
   }
  })
 
@@ -67,7 +76,7 @@
  
  watch(width, ()=>{
     console.log(width.value)
-    if(width.value<1024){
+    if(width.value<=1024){
         showNavbar.value = false
     }else{
         showNavbar.value = true

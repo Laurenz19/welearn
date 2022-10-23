@@ -91,4 +91,17 @@
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 0.5rem;
     }
+
+    /*========== Contact Page =========*/
+    /*Contact*/
+    .contact__container{
+        grid-template-columns: 1fr !important;
+        padding: 0 !important;
+        gap: 2rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .contact__form{
+        padding: 2rem 1rem  !important;
+    }
 }

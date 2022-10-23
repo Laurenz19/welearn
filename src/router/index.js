@@ -19,16 +19,15 @@ const router = createRouter({
       component: AboutView
     },
     {
-      path: '/contact',
-      name: 'Contact',
-      component: ContactView
-    },
-    {
       path: '/courses',
       name: 'Courses',
       component: CoursesView
     },
-
+    {
+      path: '/contact',
+      name: 'Contact',
+      component: ContactView
+    }
   ]
 })
 

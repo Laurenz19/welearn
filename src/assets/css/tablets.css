@@ -111,6 +111,47 @@
         gap: 1rem;
     }
 
+    /*========== Contact Page =========*/
+    /*Contact*/
+    .contact__container{
+        height: fit-content !important;
+        gap: 1.5rem !important;
+        padding: 2rem !important;
+    }
+
+    .contact__aside{
+        top:0 !important;
+        width: auto !important;
+        padding: 1rem !important;
+    }
+
+    .contact__aside p{
+        font-size: 0.8rem !important;
+    }
+
+    .contact__details h5{
+        font-size: 0.7rem !important;
+    }
+
+    .contact__details li{
+        gap: 0.5rem !important;
+    }
+
+    .contact__socials{
+        gap:0.6rem !important;
+    }
+
+    .contact__socials li{
+        padding: 0.3rem 0.6rem !important;
+        font-size: 0.7rem !important;
+    }
+
+    /*Contact Form*/
+    .contact__form{
+        place-self: center;
+    }
+
+    
 
 
     

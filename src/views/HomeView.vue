@@ -44,27 +44,7 @@
   </div>
  </section>
 
- <section class="courses">
-  <h2>Our Popular Courses</h2>
-  <div class="container courses__container">
-    <article
-      v-for="(course, index) in courses"
-      :key="index"
-      class="course"
-    >
-      <div class="course__image">
-        <img :src="course.photo">
-      </div>
-      <div class="course__info">
-        <h4>{{course.title}}</h4>
-        <p>
-        {{course.description}}
-        </p>
-        <router-link to="/course" class="btn btn-primary">Learn More</router-link>
-      </div>
-    </article>
-  </div>
- </section>
+ <courses-list title="Our Popular Courses" :courses="courses"/>
 
  <section class="faqs">
   <h2>Frequently Asked Questions</h2>
@@ -115,6 +95,7 @@
  */
  import {ref, watch} from 'vue';
  import FAQuestion from '@/components/FAQuestion.vue';
+ import CoursesList from '@/components/CoursesList.vue'
  import { Swiper, SwiperSlide } from "swiper/vue";
  import { FreeMode, Pagination } from "swiper";
 
