@@ -22,7 +22,22 @@
       >
         <i class="uil uil-bars" :class="showNavbar?'uil-multiply':'uil-bars'"></i>
       </button>
-    
+    </div>
+    <div class="select__options">
+        <span
+          @click="optionMode.showModeOptions = !optionMode.showModeOptions"
+          class="switch__mode"
+        >
+            <i class="uil" :class="optionMode.isDark?'uil-moon':'uil-sun'"></i>
+        </span>
+        <ul class="mode__options" v-if="optionMode.showModeOptions">
+            <li @click="optionMode.switchMode(false)">
+                <i class="uil uil-sun"></i> <span>Ligth</span>
+            </li>
+            <li @click="optionMode.switchMode(true)">
+                <i class="uil uil-moon"></i> <span>Dark</span>
+            </li>
+        </ul>
     </div>
  </nav>
 </template>
@@ -33,6 +48,7 @@
  */
  import {ref, watch} from 'vue';
  import {useWindowScroll, useWindowSize} from '@vueuse/core';
+ import {useModeOption} from '@/stores/modeOptionStore.js'
 
 /**
  * props
@@ -86,6 +102,11 @@
  /*used to switch between burger & close button in a small device*/
  const showNavbar = ref(true)
 
+/**
+ * Handle the switch mode option
+ */
+ const optionMode = useModeOption()
+
 </script>
 
 <style scoped>
@@ -133,6 +154,35 @@ nav button{
     color: var(--color-bg2);
 }
 
+/*Select Options*/
+.switch__mode{
+    position: fixed;
+    top:1.6rem;
+    right: 5rem;
+    cursor: pointer;
+}
+
+.mode__options{
+    position: fixed;
+    right: 5rem;
+    top: 5.5rem;
+    background: var(--color-bg2);
+    border-radius: 0.8rem;
+    overflow: hidden;
+}
+
+.mode__options li{
+   display: flex;
+   gap:1.5rem;
+   padding: 0.5rem 2rem;
+   cursor: pointer;
+   font-size: 0.85rem;
+   transition: var(--transition);
+}
+
+.mode__options li:hover{
+  background: var(--color-bg1);
+}
 /* Media Queries (tablets) */
 @media screen and (max-width:1024px) {
     nav button{

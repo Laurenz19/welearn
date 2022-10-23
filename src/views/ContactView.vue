@@ -43,7 +43,7 @@
       <form class="contact__form">
          <div class="form__name">
             <input type="text" name="First Name" placeholder="First Name" required>
-            <input type="text" name="First Name" placeholder="First Name" required>
+            <input type="text" name="Last Name" placeholder="Last Name" required>
          </div>
          <input type="email" name="Email Address" placeholder="Your Email Address" required>
          <textarea name="Message" placeholder="Message" rows="7" required :style="{'width':'100%'}"/>
