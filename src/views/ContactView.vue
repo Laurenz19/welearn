@@ -6,7 +6,7 @@
    >
       <aside class="contact__aside primary">
          <div class="aside__image">
-            <img src="src/assets/images/contact.svg">
+            <img src="@/assets/images/contact.svg">
          </div>
          <h2>Contact us</h2>
          <p>

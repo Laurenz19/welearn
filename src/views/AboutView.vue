@@ -2,7 +2,7 @@
    <section class="about__achievements">
     <div class="container about__achievements-container">
         <div class="about__achievements-left">
-            <img src="src/assets/images/about achievements.svg">
+            <img src="@/assets/images/about_achievements.svg">
         </div>
         <div class="about__achievements-right">
             <h1>Achievements</h1>
