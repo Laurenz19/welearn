@@ -4,8 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview --port 4173",
-    "start": "node server.js"
+    "preview": "vite preview --port 4173"
   },
   "dependencies": {
     "@iconscout/unicons": "^4.0.1",
