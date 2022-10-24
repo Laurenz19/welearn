@@ -6,7 +6,7 @@
 
  export const useModeOption = defineStore('modeOption', ()=>{
     /*State*/
-    const isDark = ref(true)
+    const isDark = ref(false)
     const showModeOptions = ref(false)
 
     const switchMode = (mode)=>{

@@ -6,6 +6,7 @@
       v-for="(course, index) in courses"
       :key="index"
       class="course"
+      :class="modeOptions.isDark?'course__dark':'course__light'"
     >
       <div class="course__image">
         <img :src="course.photo">
@@ -15,7 +16,7 @@
         <p>
         {{course.description}}
         </p>
-        <router-link to="/course" class="btn btn-primary">Learn More</router-link>
+        <router-link to="/course" class="btn-primary" :class="modeOptions.isDark?'btn':'btn__light'">Learn More</router-link>
       </div>
     </article>
   </div>
@@ -23,6 +24,10 @@
 </template>
 
 <script setup>
+/**
+ * import
+ */
+ import {useModeOption} from '@/stores/modeOptionStore.js'
 /**
  * props
  */
@@ -36,4 +41,9 @@
         default:''
     }
  })
+
+ /**
+  * Mode option handler
+  */
+  const modeOptions = useModeOption()
 </script>

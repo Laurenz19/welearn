@@ -1,5 +1,12 @@
 <template>
-  <courses-list title="All Courses Available" :courses="courses"/>
+   <section>
+      <courses-list
+        :courses="courses"
+        class="courses__list"
+        title="All Courses Available"
+      /> 
+   </section>
+   <!-- <courses-list title="All Courses Available" :courses="courses"/> -->
 </template>
 <script setup>
 /**
@@ -101,4 +108,11 @@
 ])
 
 </script>
-  
+
+<style scoped>
+
+.courses__list{
+   margin: 0;
+   padding: 0;
+}
+</style>

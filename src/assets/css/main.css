@@ -6,7 +6,7 @@
 /*Header*/
 header{
     position: relative;
-    /* top:5rem; */
+    top:5rem;
     height: 60vh;
     overflow: hidden;
     margin-bottom: 5rem;
@@ -27,7 +27,7 @@ header{
 
 /*Categories*/
 .categories{
-    background: var(--color-bg1);
+    /* background: var(--color-bg1); */
     height: 30rem;
 }
 
@@ -55,14 +55,30 @@ header{
 }
 
 .category{
-    background: var(--color-bg2);
+    color: var(--color-white);
     padding: 1.4rem;
     border-radius: 1.4rem;
     transition: var(--transition);
 }
 
-.category:hover{
+.category__dark{
+    background: var(--color-bg2);
+}
+
+.category__dark:hover{
     box-shadow: 0 2rem 2rem rgba(0,0,0,0.3);
+}
+
+.category__light{
+    background: var(--color-primary);
+}
+
+.category__light:hover{
+    box-shadow: 0 2rem 2rem rgba(0,0,0,0.3);
+}
+
+.category:hover{
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.3);
     z-index: 1;
 }
 
@@ -93,13 +109,28 @@ header{
 }
 
 .course{
-    background: var(--color-bg1);
-    border: 1px solid transparent;
     text-align: center;
     transition: var(--transition);
 }
 
-.course:hover{
+.course__light{
+    background: var(--color-white);
+    border: 1px solid var(--light-color-bg1);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.course__light:hover{
+    border-color: transparent;
+    box-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.3);
+}
+
+.course__dark{
+    background: var(--color-bg1);
+    border: 1px solid transparent;
+}
+
+.course__dark:hover{
     border-color: var(--color-primary);
     background: transparent;
 }
@@ -115,8 +146,10 @@ header{
 
 /*FAQs stands for Frequently Asked Questions*/
 .faqs{
-    background: var(--color-bg1);
-    box-shadow: inset 0 0 3rem rgba(0,0,0,0.5);
+    /* background: var(--color-bg1); */
+    /* box-shadow: inset 0 0 3rem rgba(0,0,0,0.5); 
+    */
+    /* color: var(--color-white); */
 }
 
 .faqs__container{
@@ -131,6 +164,7 @@ header{
     padding: 1.5rem;
     height: fit-content;
     background: var(--color-primary);
+    color: var(--color-white);
     gap: 1.4rem;
     cursor: pointer;
 }
@@ -168,6 +202,15 @@ header{
     border-radius: 50%;
     margin: 0 auto 1rem;
     overflow: hidden;
+    
+}
+
+.avatar__light{
+    border: 1rem solid var(--light-color-bg);
+    box-shadow: 0 0.1rem 0.2rem rgba(0,0,0,0.3);
+}
+
+.avatar__dark{
     border: 1rem solid var(--color-bg1);
 }
 
@@ -183,6 +226,7 @@ header{
     text-align: justify;
     margin-top: 2rem;
     position: relative;
+    color: var(--color-white);
 }
 
 .testimonial__body::before{
@@ -234,13 +278,26 @@ header{
 
 .achievement__card{
     text-align: center;
-    background: var(--color-bg1);
+    /* background: var(--color-bg1); */
     padding: 2.3rem 0;
     border-radius: 1.2rem;
     transition: var(--transition);
 }
 
-.achievement__card:hover{
+.achievement__card-light{
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.achievement__card-light:hover{
+    box-shadow: 0 0rem 3rem rgba(0,0,0,0.3);
+}
+
+.achievement__card-dark{
+    background: var(--color-bg1)
+}
+
+.achievement__card-dark:hover{
     background: var(--color-bg2);
     box-shadow: 0 3rem 3rem rgba(0,0,0,0.3);
 }
@@ -256,8 +313,8 @@ header{
 /*Team members*/
 .team{
     height: fit-content;
-    background: var(--color-bg1);
-    box-shadow: inset 0rem 0rem 3rem rgba(0,0,0,0.5);
+    /* background: var(--color-bg1); */
+    /* box-shadow: inset 0rem 0rem 3rem rgba(0,0,0,0.5); */
     margin-bottom: 5rem;
 }
 
@@ -268,7 +325,6 @@ header{
 }
 
 .team__member{
-    background: var(--color-bg2);
     padding: 2rem;
     border: 1px solid transparent;
     border-radius: 1.2rem;
@@ -277,7 +333,21 @@ header{
     position: relative;
 }
 
-.team__member:hover{
+.team__member-light{
+    color: var(--color-white);
+    background: var(--color-primary);
+}
+
+.team__member-light:hover{
+    background: var(--light-color-bg2);
+    border-color: var(--color-primary);
+}
+
+.team__member-dark{
+    background: var(--color-bg2);
+}
+
+.team__member-dark:hover{
     background: var(--color-bg1);
     border-color: var(--color-primary);
 }
@@ -338,7 +408,7 @@ header{
 /*=========== Contact Page ============*/
 /*Contact*/
 .contact__container{
-    background: var(--color-bg1);
+    /* background: var(--color-bg1); */
     display: grid;
     grid-template-columns: 40% 60%;
     gap: 2rem;
@@ -346,10 +416,11 @@ header{
     height: 30rem;
     border-radius: 1rem;
     margin-bottom: 5rem;
+    box-shadow: 0 1rem 5rem rgba(117, 103, 184, 0.2);
 }
 
 .contact__aside{
-    background: var(--color-primary);
+    /* background: var(--color-primary); */
     padding: 2rem;
     position: relative;
     top:-25%;
@@ -415,11 +486,23 @@ header{
     gap: 1.5rem;
 }
 
-input, textarea{
+.bg1 input, textarea{
     width: 100%;
     padding: 1rem;
     background: var(--color-bg);
     color: var(--color-white);
+}
+
+.bg1 textarea{
+    background: var(--color-bg);
+    color: var(--color-white);
+}
+
+.light-bg2 input, textarea{
+    width: 100%;
+    padding: 1rem;
+    background: var(--color-white);
+    color: var(--color-bg);
 }
 
 .contact__form .btn{

@@ -7,7 +7,7 @@
         <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime accusantium laudantium non libero deserunt in architecto! Corporis repellat eligendi qui.
         </p>
-        <router-link to="/courses" class="btn btn-primary">Get Started</router-link>
+        <router-link to="/courses" class="btn-primary" :class="modeOptions.isDark?'btn':'btn__light'">Get Started</router-link>
     </div>
     <div class="header__right">
       <div class="header__right-image">
@@ -17,14 +17,14 @@
   </div>
  </header>
 
- <section class="categories">
+ <section class="categories" :class="modeOptions.isDark?'bg1':'light-bg1'">
   <div class="container categories__container">
     <div class="categories__left">
         <h1>Categories</h1>
         <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo dolor ipsum corrupti ea voluptatibus modi in ducimus non sequi numquam. Tenetur sint nihil ut molestiae maiores esse ullam quod tempore.
         </p>
-        <a href="#" class="btn">Learn More</a>
+        <a href="#" :class="modeOptions.isDark?'btn':'btn__light'">Learn More</a>
     </div>
     
     <div class="categories__right">
@@ -32,6 +32,7 @@
         v-for="(category, index) in categories"
         :key="index"
         class="category"
+        :class="modeOptions.isDark?'category__dark':'category__light'"
       >
         <span class="category__icon" :class="category.color"><i class="uil" :class="category.icon"></i></span>
         <h5>{{category.title}}</h5>
@@ -46,7 +47,7 @@
 
  <courses-list title="Our Popular Courses" :courses="courses"/>
 
- <section class="faqs">
+ <section class="faqs" :class="modeOptions.isDark?'bg1':'light-bg1'">
   <h2>Frequently Asked Questions</h2>
   <div class="container faqs__container">
     <f-a-question
@@ -75,7 +76,7 @@
       :key="index"
       class="testimonial"
     >
-      <div class="avatar">
+      <div class="avatar" :class="modeOptions.isDark?'avatar__dark':'avatar__light'">
         <img :src="student.avatar">
       </div>
       <div class="testimonial__info">
@@ -98,6 +99,7 @@
  import CoursesList from '@/components/CoursesList.vue'
  import { Swiper, SwiperSlide } from "swiper/vue";
  import { FreeMode, Pagination } from "swiper";
+ import {useModeOption} from '@/stores/modeOptionStore.js'
 
  /**
  * Categories 
@@ -105,7 +107,7 @@
  const categories = ref([
   {
     icon:"uil-bitcoin-circle",
-    color:"primary",
+    color:"warning",
     title:"Blockchain",
     description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, eius."
   },
@@ -129,13 +131,13 @@
   },
   {
     icon:"uil-music",
-    color:"warning",
+    color:"danger",
     title:"Music",
     description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, eius."
   },
   {
     icon:"uil-puzzle-piece",
-    color:"primary",
+    color:"warning",
     title:"Business",
     description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, eius."
   },
@@ -221,4 +223,10 @@
     slidesPerView:2
   }
  }
+
+
+ /**
+  * Mode Option Handler
+  */
+  const modeOptions = useModeOption()
 </script>

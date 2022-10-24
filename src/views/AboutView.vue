@@ -14,6 +14,7 @@
                   v-for="(achievement, index) in achievements"
                   :key="index"
                   class="achievement__card"
+                  :class="modeOptions.isDark?'achievement__card-dark':'achievement__card-light'"
                 >
                     <span class="achievement__icon" :class="achievement.color">
                     <i class="uil" :class="achievement.icon"></i>
@@ -26,10 +27,15 @@
     </div>
    </section>
 
-   <section class="team">
+   <section class="team"  :class="modeOptions.isDark?'bg1':'light-bg1'">
     <h2>Meet Our Team</h2>
     <div class="container team__container">
-        <article class="team__member" v-for="(member, index) in members" :key="index">
+       <article
+          v-for="(member, index) in members"
+          :key="index"
+          class="team__member"
+          :class="modeOptions.isDark?'team__member-dark':'team__member-light'"
+        >
             <div class="team__member-image">
                 <img :src="member.photo">
             </div>
@@ -52,13 +58,14 @@
  * import
  */
  import {ref} from 'vue'
+ import {useModeOption} from '@/stores/modeOptionStore.js'
 
  const achievements = ref([
     {
         icon: 'uil-video',
         value:'450+',
         label:'Courses',
-        color:'primary'
+        color:'warning'
     },
     {
         icon: 'uil-users-alt',
@@ -115,17 +122,11 @@
         name:'Laurenzio Sambany',
         title:'Web Developer',
     },
-    {
-        photo:'src/assets/images/tm9.jpg',
-        name:'Laurenzio Sambany',
-        title:'Web Developer',
-    },
-    {
-        photo:'src/assets/images/tm10.jpg',
-        name:'Laurenzio Sambany',
-        title:'Web Developer',
-    },
-
  ])
+
+/**
+ * Mode Options Handler
+ */
+ const modeOptions = useModeOption()
 </script>
   

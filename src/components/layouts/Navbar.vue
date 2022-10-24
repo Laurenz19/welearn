@@ -1,5 +1,8 @@
 <template>
- <nav ref="navRef">
+ <nav
+   :class="modeOptions.isDark?'bg':'light-bg'"
+   ref="navRef"
+ >
     <div class="container nav__container">
       <router-link to="/"><h4>{{title}}</h4></router-link>
     
@@ -16,28 +19,41 @@
         </li>
       </ul>
 
+      <div class="select__options">
+        
+        <span
+          @click="modeOptions.showModeOptions = !modeOptions.showModeOptions"
+          class="switch__mode"
+        >
+            <i class="uil" :class="modeOptions.isDark?'uil-moon':'uil-sun'"></i>
+        </span>
+        
+        
+        <ul
+          v-if="modeOptions.showModeOptions"
+          :class="modeOptions.isDark?'bg2':'light-bg'"
+          class="mode__options"
+        >
+            <mode-options-list
+                :option="{title:'Light', icon:'uil-sun'}"
+                @click="modeOptions.switchMode(false)"
+            />
+            <mode-options-list
+                :option="{title:'Dark', icon:'uil-moon'}"
+                @click="modeOptions.switchMode(true)"
+            />
+        </ul>
+
+
+    </div>
+
       <button
+        :style="modeOptions.isDark?{'color':'#fff'}:{'color':'#1f2641'}"
         @click="showNavbar = !showNavbar"
         id="openclose__menu"
       >
         <i class="uil uil-bars" :class="showNavbar?'uil-multiply':'uil-bars'"></i>
       </button>
-    </div>
-    <div class="select__options">
-        <span
-          @click="optionMode.showModeOptions = !optionMode.showModeOptions"
-          class="switch__mode"
-        >
-            <i class="uil" :class="optionMode.isDark?'uil-moon':'uil-sun'"></i>
-        </span>
-        <ul class="mode__options" v-if="optionMode.showModeOptions">
-            <li @click="optionMode.switchMode(false)">
-                <i class="uil uil-sun"></i> <span>Ligth</span>
-            </li>
-            <li @click="optionMode.switchMode(true)">
-                <i class="uil uil-moon"></i> <span>Dark</span>
-            </li>
-        </ul>
     </div>
  </nav>
 </template>
@@ -49,6 +65,7 @@
  import {ref, watch} from 'vue';
  import {useWindowScroll, useWindowSize} from '@vueuse/core';
  import {useModeOption} from '@/stores/modeOptionStore.js'
+ import ModeOptionsList from '@/components/utils/ModeOptionsList.vue'
 
 /**
  * props
@@ -69,7 +86,6 @@
  })
 
  
-
 /**
  * Navbar Handler
  * useWindowScroll allows us to detect the 
@@ -78,21 +94,22 @@
  const {x, y} = useWindowScroll()
  const navRef = ref(null)
  const isOnScroll = ref(false)
+
  watch(y, ()=>{
-  if(y.value > 0){
-    navRef.value.classList.add('nav__OnScroll')
-    isOnScroll.value = true
-  }else if(y.value <= 1){
-    navRef.value.classList.remove('nav__OnScroll')
-    isOnScroll.value = false
-  }
+    if(y.value > 0){
+        navRef.value.classList.add('nav__OnScroll')
+        isOnScroll.value = true
+    }else if(y.value <= 1){
+        navRef.value.classList.remove('nav__OnScroll')
+        isOnScroll.value = false
+    }  
  })
 
  const { width, height } = useWindowSize()
  
  watch(width, ()=>{
     console.log(width.value)
-    if(width.value<=1024){
+    if(width.value<1025){
         showNavbar.value = false
     }else{
         showNavbar.value = true
@@ -102,10 +119,14 @@
  /*used to switch between burger & close button in a small device*/
  const showNavbar = ref(true)
 
+ if(width.value<1025){
+    showNavbar.value = false
+ }
+
 /**
  * Handle the switch mode option
  */
- const optionMode = useModeOption()
+ const modeOptions = useModeOption()
 
 </script>
 
@@ -114,7 +135,7 @@
 
 /*Navbar*/
 nav{
-    background: transparent;
+    /* background: var(--color-bg); */
     width: 100vw;
     height: 5rem;
     position: fixed;
@@ -122,11 +143,39 @@ nav{
     z-index: 11;
 }
 
+nav.light-bg a{
+    color: var(--color-bg);
+}
+
 /*Change the navbar style on sroll using useWindowScroll*/
 .nav__OnScroll{
     background: var(--color-primary);
     box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
 }
+
+.nav__OnScroll.light-bg a{
+    color: var(--color-white);
+}
+
+.nav__OnScroll a{
+    color: var(--color-white);
+}
+
+.bg .nav__menu a.isActive__1.router-link-exact-active{
+        color: var(--color-primary) !important;
+}
+
+.nav__OnScroll button{
+        color: var(--color-white) !important;
+ }
+.nav__OnScroll .select__options{
+    color: var(--color-white);
+}
+
+/* .nav__OnScroll-light{
+    background: var(--color-bg2);
+    box-shadow: 0 0.3rem 0.5rem rgba(0,0,0,0.1);
+} */
 
 .nav__container{
     height: 100%;
@@ -157,18 +206,29 @@ nav button{
 /*Select Options*/
 .switch__mode{
     position: fixed;
-    top:1.6rem;
+    top:1.5rem;
     right: 5rem;
     cursor: pointer;
+    font-size: 1.2rem;
 }
 
 .mode__options{
     position: fixed;
-    right: 5rem;
     top: 5.5rem;
-    background: var(--color-bg2);
+    /* background: var(--color-bg2); */
     border-radius: 0.8rem;
     overflow: hidden;
+    box-shadow: 0rem 0.2rem 0.5rem rgba(0,0,0,0.2);
+    animation: switchOptionAnimate 600ms ease-in-out forwards;
+}
+
+@keyframes switchOptionAnimate {
+    0%{
+        right: -100%;
+    }
+    100%{
+        right: 5rem;
+    }
 }
 
 .mode__options li{
@@ -180,16 +240,24 @@ nav button{
    transition: var(--transition);
 }
 
-.mode__options li:hover{
-  background: var(--color-bg1);
+ul.bg2 li:hover{
+    background: var(--color-bg1);
 }
+
+ul.light-bg li:hover{
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+/* .mode__options li:hover{
+  background: var(--color-bg1);
+} */
 /* Media Queries (tablets) */
 @media screen and (max-width:1024px) {
     nav button{
         display: inline-block !important;
         background: transparent;
         color: var(--color-white);
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         cursor: pointer;
     }
 
@@ -245,12 +313,40 @@ nav button{
         color: var(--color-white)
     }
 
+    .light-bg .nav__menu a{
+        background: var(--light-color-bg);
+    }
+
+    .light-bg .nav__menu a:hover{
+        background: var(--light-color-bg2);
+    }
+
+    .nav__OnScroll.light-bg .nav__menu a{
+        color: var(--color-bg);
+    }
+
+    .nav__OnScroll.light-bg .nav__menu a.router-link-exact-active{
+        color: var(--color-primary) !important;
+    }
+
+    .nav__OnScroll.bg .nav__menu a.isActive__1.router-link-exact-active{
+        color: var(--color-bg) !important;
+    }
+
+    .bg .nav__menu a.isActive__1.router-link-exact-active{
+        color: var(--color-bg) !important;
+   }
+
 }
 
 /* Media Queries (Phone) */
 @media screen and (max-width:600px) {
     .nav__menu{
         right: 3% !important;
+    }
+
+    nav button{
+        margin-right: 1rem;
     }
 }
 </style>

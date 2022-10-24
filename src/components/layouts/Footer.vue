@@ -1,5 +1,5 @@
 <template>
-<footer>
+<footer :class="modeOptions.isDark?'bg1':'light-bg1'">
   <div class="container footer__container">
     <div class="footer__1">
       <router-link to="/" class="footer__logo"><h4>{{appName}}</h4></router-link>
@@ -53,16 +53,26 @@
 /**
  * import
  */
+ import {useModeOption} from '@/stores/modeOptionStore.js'
  import {useWebsiteStore} from '@/stores/websiteStore.js'
  const {appName, routes} = useWebsiteStore()
+
+ /**
+  * Mode Option Handler
+  */
+  const modeOptions = useModeOption()
 </script>
 
 <style scoped>
 @import "../../assets/css/base.css";
 /*Footer*/
 footer{
-    background: var(--color-bg1);
+    /* background: var(--color-bg1); */
     padding-top: 5rem;
+}
+
+footer.light-bg1  a{
+  color: var(--color-bg);
 }
 
 .footer__container{

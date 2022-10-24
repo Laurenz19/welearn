@@ -1,7 +1,10 @@
 <template>
   <section class="contact">
-   <div class="container contact__container">
-      <aside class="contact__aside">
+   <div
+     :class="modeOptions.isDark?'bg1':'light-bg2'"
+     class="container contact__container"
+   >
+      <aside class="contact__aside primary">
          <div class="aside__image">
             <img src="src/assets/images/contact.svg">
          </div>
@@ -54,5 +57,11 @@
 </template>
 
 <script setup>
+/**
+ * import
+ */
+ import {useModeOption} from '@/stores/modeOptionStore.js'
+
+ const modeOptions = useModeOption()
 </script>
   
