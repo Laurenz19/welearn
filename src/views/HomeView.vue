@@ -170,43 +170,43 @@
  */
  const testimonials = ref([
   {
-    avatar:'src/assets/images/avatar1.jpg',
+    avatar:'./src/assets/images/avatar1.jpg',
     name: 'Laurenzio Sambany',
     title: 'Web Developer',
     testimonial: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem inventore voluptatem quod aperiam impedit, deleniti nemo aliquid, dolore at eveniet tempora, exercitationem similique animi voluptate ipsum veniam quibusdam officia? Perspiciatis.'
   },
   {
-    avatar:'src/assets/images/avatar2.jpg',
+    avatar:'./src/assets/images/avatar2.jpg',
     name: 'John Doe',
     title: 'UI/UX Designer',
     testimonial: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem inventore voluptatem quod aperiam impedit, deleniti nemo aliquid, dolore at eveniet tempora, exercitationem similique animi voluptate ipsum veniam quibusdam officia? Perspiciatis.'
   },
   {
-    avatar:'src/assets/images/avatar3.jpg',
+    avatar:'./src/assets/images/avatar3.jpg',
     name: 'Laurent Sambany',
     title: 'Student',
     testimonial: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem inventore voluptatem quod aperiam impedit, deleniti nemo aliquid, dolore at eveniet tempora, exercitationem similique animi voluptate ipsum veniam quibusdam officia? Perspiciatis.'
   },
   {
-    avatar:'src/assets/images/avatar4.jpg',
+    avatar:'./src/assets/images/avatar4.jpg',
     name: 'Laurenah Sambany',
     title: 'Student',
     testimonial: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem inventore voluptatem quod aperiam impedit, deleniti nemo aliquid, dolore at eveniet tempora, exercitationem similique animi voluptate ipsum veniam quibusdam officia? Perspiciatis.'
   },
   {
-    avatar:'src/assets/images/avatar5.jpg',
+    avatar:'./src/assets/images/avatar5.jpg',
     name: 'Zara Marie',
     title: 'Student',
     testimonial: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem inventore voluptatem quod aperiam impedit, deleniti nemo aliquid, dolore at eveniet tempora, exercitationem similique animi voluptate ipsum veniam quibusdam officia? Perspiciatis.'
   },
   {
-    avatar:'src/assets/images/avatar6.jpg',
+    avatar:'./src/assets/images/avatar6.jpg',
     name: 'Jane Doe',
     title: 'Front-end Developer',
     testimonial: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem inventore voluptatem quod aperiam impedit, deleniti nemo aliquid, dolore at eveniet tempora, exercitationem similique animi voluptate ipsum veniam quibusdam officia? Perspiciatis.'
   },
   {
-    avatar:'src/assets/images/avatar7.jpg',
+    avatar:'./src/assets/images/avatar7.jpg',
     name: 'Priscilla Seva',
     title: 'Student',
     testimonial: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem inventore voluptatem quod aperiam impedit, deleniti nemo aliquid, dolore at eveniet tempora, exercitationem similique animi voluptate ipsum veniam quibusdam officia? Perspiciatis.'
