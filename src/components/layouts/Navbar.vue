@@ -337,6 +337,15 @@ ul.light-bg li:hover{
         color: var(--color-bg) !important;
    }
 
+   @keyframes switchOptionAnimate {
+    0%{
+        right: -100%;
+    }
+    100%{
+        right: 1rem;
+    }
+}
+
 }
 
 /* Media Queries (Phone) */

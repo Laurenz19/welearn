@@ -18,92 +18,92 @@
   {
     title: "Responsive Social Media Website UI Design",
     description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, amet nulla minima nostrum iusto libero explicabo?",
-    photo:"src/assets/images/course1.jpg"
+    photo:"./images/course1.jpg"
  },
  {
     title: "Responsive SmartHome Website Design",
     description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, amet nulla minima nostrum iusto libero explicabo?",
-    photo:"src/assets/images/course2.jpg"
+    photo:"./images/course2.jpg"
  },
  {
     title: "Responsive Admin Dashboard UI Design",
     description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, amet nulla minima nostrum iusto libero explicabo?",
-    photo:"src/assets/images/course3.jpg"
+    photo:"./images/course3.jpg"
  },
  {
     title: "Responsive Social Media Website UI Design",
     description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, amet nulla minima nostrum iusto libero explicabo?",
-    photo:"src/assets/images/course4.jpg"
+    photo:"./images/course4.jpg"
  },
  {
     title: "Responsive SmartHome Website Design",
     description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, amet nulla minima nostrum iusto libero explicabo?",
-    photo:"src/assets/images/course5.jpg"
+    photo:"./images/course5.jpg"
  },
  {
     title: "Responsive Admin Dashboard UI Design",
     description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, amet nulla minima nostrum iusto libero explicabo?",
-    photo:"src/assets/images/course6.jpg"
+    photo:"./images/course6.jpg"
  },
  {
     title: "Responsive Social Media Website UI Design",
     description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, amet nulla minima nostrum iusto libero explicabo?",
-    photo:"src/assets/images/course7.jpg"
+    photo:"./images/course7.jpg"
  },
  {
     title: "Responsive SmartHome Website Design",
     description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, amet nulla minima nostrum iusto libero explicabo?",
-    photo:"src/assets/images/course8.jpg"
+    photo:"./images/course8.jpg"
  },
  {
     title: "Responsive Admin Dashboard UI Design",
     description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, amet nulla minima nostrum iusto libero explicabo?",
-    photo:"src/assets/images/course9.jpg"
+    photo:"./images/course9.jpg"
  },
  {
     title: "Responsive Social Media Website UI Design",
     description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, amet nulla minima nostrum iusto libero explicabo?",
-    photo:"src/assets/images/course10.jpg"
+    photo:"./images/course10.jpg"
  },
  {
     title: "Responsive SmartHome Website Design",
     description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, amet nulla minima nostrum iusto libero explicabo?",
-    photo:"src/assets/images/course11.jpg"
+    photo:"./images/course11.jpg"
  },
  {
     title: "Responsive Admin Dashboard UI Design",
     description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, amet nulla minima nostrum iusto libero explicabo?",
-    photo:"src/assets/images/course12.jpg"
+    photo:"./images/course12.jpg"
  },
  {
     title: "Responsive Social Media Website UI Design",
     description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, amet nulla minima nostrum iusto libero explicabo?",
-    photo:"src/assets/images/course13.jpg"
+    photo:"./images/course13.jpg"
  },
  {
     title: "Responsive SmartHome Website Design",
     description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, amet nulla minima nostrum iusto libero explicabo?",
-    photo:"src/assets/images/course14.jpg"
+    photo:"./images/course14.jpg"
  },
  {
     title: "Responsive Admin Dashboard UI Design",
     description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, amet nulla minima nostrum iusto libero explicabo?",
-    photo:"src/assets/images/course15.jpg"
+    photo:"./images/course15.jpg"
  },
  {
     title: "Responsive Social Media Website UI Design",
     description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, amet nulla minima nostrum iusto libero explicabo?",
-    photo:"src/assets/images/course16.jpg"
+    photo:"./images/course16.jpg"
  },
  {
     title: "Responsive SmartHome Website Design",
     description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, amet nulla minima nostrum iusto libero explicabo?",
-    photo:"src/assets/images/course17.jpg"
+    photo:"./images/course17.jpg"
  },
  {
     title: "Responsive Admin Dashboard UI Design",
     description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, amet nulla minima nostrum iusto libero explicabo?",
-    photo:"src/assets/images/course18.jpg"
+    photo:"./images/course18.jpg"
  },
 ])
 

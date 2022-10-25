@@ -83,42 +83,42 @@
 
  const members = ref([
     {
-        photo:'src/assets/images/tm1.jpg',
+        photo:'./images/tm1.jpg',
         name:'Laurenzio Sambany',
         title:'Web Developer',
     },
     {
-        photo:'src/assets/images/tm2.jpg',
+        photo:'./images/tm2.jpg',
         name:'Laurenzio Sambany',
         title:'Web Developer',
     },
     {
-        photo:'src/assets/images/tm3.jpg',
+        photo:'./images/tm3.jpg',
         name:'Laurenzio Sambany',
         title:'Web Developer',
     },
     {
-        photo:'src/assets/images/tm4.jpg',
+        photo:'./images/tm4.jpg',
         name:'Laurenzio Sambany',
         title:'Web Developer',
     },
     {
-        photo:'src/assets/images/tm5.jpg',
+        photo:'./images/tm5.jpg',
         name:'Laurenzio Sambany',
         title:'Web Developer',
     },
     {
-        photo:'src/assets/images/tm6.jpg',
+        photo:'./images/tm6.jpg',
         name:'Laurenzio Sambany',
         title:'Web Developer',
     },
     {
-        photo:'src/assets/images/tm7.jpg',
+        photo:'./images/tm7.jpg',
         name:'Laurenzio Sambany',
         title:'Web Developer',
     },
     {
-        photo:'src/assets/images/tm8.jpg',
+        photo:'./images/tm8.jpg',
         name:'Laurenzio Sambany',
         title:'Web Developer',
     },
